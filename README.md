@@ -1,46 +1,46 @@
-# Rymdresan – Från jorden till månen
+# Rymdresan – From Earth to the Moon
 
-Ett stående arkadspel för webbläsare och Android där Johannes och hans brorsöner flyger till månen.
+A vertical arcade game for browsers and Android where Johannes and his nephews fly to the Moon.
 
-## Spela lokalt
+## Play locally
 
-Krav: Node.js 20+.
+Requirements: Node.js 20+.
 
 ```powershell
 npm install
 npm run dev
 ```
 
-Öppna adressen som Vite visar. Spelet skalar automatiskt till fönstret men är designat för portrait.
+Open the address shown by Vite. The game scales automatically to the window but is designed for portrait.
 
-## Kontroller
+## Controls
 
-- Mobil/pekdon: håll och dra raketen åt vänster eller höger.
-- Tangentbord: `A`/`D` eller vänster/höger.
-- Paintball-pistol: Mittenknappen (android) och spacetangenten (web)
-- Pausknappen finns uppe till höger.
+- Mobile/touch: hold and drag the rocket left or right.
+- Keyboard: `A`/`D` or the left/right arrow keys.
+- Paintball gun: middle button (Android) and spacebar (web).
+- The pause button is in the top-right corner.
 
-## Innehåll
+## Content
 
-- Fem mjukt övergående höjdzoner från låg himmel till månfärd.
-- Fåglar, propellerplan, luftballonger, satelliter och asteroider.
-- Myntmönster samt sköld, paintball, myntboost och tidsbubbla.
-- Fyra parallaxdjup, partiklar, fönsteranimationer och adaptiv fart.
-- Månlandning med låggravitationhopp och resultatkort.
-- Globalt sparad highscore.
+- Five smoothly transitioning altitude zones from low sky to lunar journey.
+- Birds, propeller planes, hot air balloons, satellites and asteroids.
+- Coin patterns plus shield, paintball, coin boost and time bubble power-ups.
+- Four parallax layers, particles, window animations and adaptive speed.
+- Moon landing with low-gravity jump and results screen.
+- Globally saved high score.
 
-## Produktionsbygge för webben
+## Production build for the web
 
 ```powershell
 npm run build
 npm run preview
 ```
 
-Färdiga webbfiler hamnar i `dist/`.
+The finished web files end up in `dist/`.
 
 ## Android
 
-Androidprojektet finns i `android/` och använder Capacitor. Senaste Capacitor kräver JDK 21; på den här datorn finns det i Android Studios `jbr`.
+The Android project lives in `android/` and uses Capacitor. Current Capacitor requires JDK 21; on this computer it is available in Android Studio's `jbr`.
 
 ```powershell
 npm run android:sync
@@ -49,32 +49,33 @@ Set-Location android
 .\gradlew.bat assembleDebug
 ```
 
-APK:n hamnar i:
+The APK ends up at:
 
 ```text
 android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Installera på en USB-ansluten enhet:
+Install it on a USB-connected device:
 
 ```powershell
 adb install -r android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Om `adb install` fastnar kan APK:n skickas och installeras i två steg:
+If `adb install` gets stuck, the APK can be pushed and installed in two steps:
 
 ```powershell
 adb push android/app/build/outputs/apk/debug/app-debug.apk /data/local/tmp/rymdjojjo-debug.apk
 adb shell pm install -r /data/local/tmp/rymdjojjo-debug.apk
 ```
 
-## Projektstruktur
+## Project structure
 
-- `src/scenes/BootScene.ts` laddning och genererade texturer.
-- `src/scenes/MenuScene.ts` titel, hjälp och highscore.
-- `src/scenes/GameScene.ts` intro, flygloop, zoner, powerups och final.
-- `src/game/visuals.ts` originalritade spelobjekt och porträttkomposition.
-- `src/game/AudioBus.ts` genererade ljudeffekter via Web Audio.
-- `public/assets/` AI-skapade, projektbundna nyckelassets.
-- `PLAN.md` produktions- och designplan.
-- `artifacts/` verifieringsbilder från Pixel 7 Pro.
+- `src/scenes/BootScene.ts` loading and generated textures.
+- `src/scenes/MenuScene.ts` title, help and high score.
+- `src/scenes/GameScene.ts` intro, flight loop, zones, power-ups and finale.
+- `src/game/visuals.ts` original-drawn game objects and portrait composition.
+- `src/game/AudioBus.ts` generated sound effects via Web Audio.
+- `public/assets/` AI-created key assets bundled with the project.
+- `PLAN.md` production and design plan.
+- `artifacts/` verification images from Pixel 7 Pro.
+- `server/` high score API and deployment files (see `server/README.md`).
