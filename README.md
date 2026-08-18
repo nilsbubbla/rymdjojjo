@@ -1,6 +1,6 @@
 # Rymdresan – Från jorden till månen
 
-Ett stående arkadspel för webbläsare och Android där Johannes, Leo och Oliver flyger från jorden till månen.
+Ett stående arkadspel för webbläsare och Android där Johannes och hans brorsöner flyger till månen.
 
 ## Spela lokalt
 
@@ -17,18 +17,17 @@ npm run dev
 
 - Mobil/pekdon: håll och dra raketen åt vänster eller höger.
 - Tangentbord: `A`/`D` eller vänster/höger.
-- Paintball skjuter automatiskt mot närmaste hinder när powerupen är aktiv.
+- Paintball-pistol: Mittenknappen (android) och spacetangenten (web)
 - Pausknappen finns uppe till höger.
 
 ## Innehåll
 
-- Animerad ombordstigning med Johannes först, följd av Leo och Oliver.
 - Fem mjukt övergående höjdzoner från låg himmel till månfärd.
 - Fåglar, propellerplan, luftballonger, satelliter och asteroider.
 - Myntmönster samt sköld, paintball, myntboost och tidsbubbla.
 - Fyra parallaxdjup, partiklar, fönsteranimationer och adaptiv fart.
 - Månlandning med låggravitationhopp och resultatkort.
-- Lokalt sparad highscore och ljudinställning.
+- Globalt sparad highscore.
 
 ## Produktionsbygge för webben
 
@@ -79,17 +78,3 @@ adb shell pm install -r /data/local/tmp/rymdjojjo-debug.apk
 - `public/assets/` AI-skapade, projektbundna nyckelassets.
 - `PLAN.md` produktions- och designplan.
 - `artifacts/` verifieringsbilder från Pixel 7 Pro.
-
-## Bildassets
-
-Nyckelgrafiken skapades med den inbyggda bildgeneratorn och sparades i projektet:
-
-- `public/assets/crew-master.png`: Johannes, Leo och Oliver i sammanhållen realistic-cartoonstil, baserade på de lokala fotoreferenserna.
-- `public/assets/rocket.png`: frontvänd retrofuturistisk raket med tre fönster.
-- `public/assets/app-icon.png`: launcher-/splashmotiv med raket och måne.
-- `public/assets/obstacle-plane-v2.png`: målat propellerplan med transparent bakgrund.
-- `public/assets/obstacle-balloon.png`: målad luftballong med envelope, brännare och korg.
-- `public/assets/obstacle-bird-v2.png`: målad fågel i trovärdig flygpose.
-- `public/assets/obstacle-satellite.png`: kommunikationssatellit med parabol och solpaneler.
-
-Övriga hinder, mynt, powerupikoner, moln, partiklar och UI är originalritade i Phaser för skarpa former, små filer och mjuk animation. De större flygobjekten använder högupplösta bildassets medan kodlagren sköter rörelse, rotation, parallax och kollision.
