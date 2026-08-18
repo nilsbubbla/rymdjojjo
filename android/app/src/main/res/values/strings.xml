@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rymdresan - Från jorden till månen</string>
+    <string name="title_activity_main">Rymdresan - Från jorden till månen</string>
+    <string name="package_name">se.rymdjojjo.game</string>
+    <string name="custom_url_scheme">se.rymdjojjo.game</string>
+</resources>

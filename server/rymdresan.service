@@ -1,0 +1,25 @@
+[Unit]
+Description=Rymdresan highscore API
+After=network.target
+
+[Service]
+Type=simple
+User=rymdresan
+Group=rymdresan
+UMask=0027
+WorkingDirectory=/opt/rymdresan-highscores
+ExecStart=/usr/bin/python3 -m rymdresan.server --config /etc/rymdresan/config.json
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/rymdresan
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target
+
